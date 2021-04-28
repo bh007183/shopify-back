@@ -43,7 +43,7 @@ router.post("/login", async (req, res) => {
         }
       );
     } else {
-      res.json("No such user!");
+      res.status(401).send("No such user!");
     }
   }
 });

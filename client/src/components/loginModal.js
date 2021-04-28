@@ -20,7 +20,8 @@ export default function LoginModal() {
         })
       }
     
-      const submitForm = () => {
+      const submitForm = (event) => {
+          event.preventDefault()
         dispatch(loginApi(login))
         
       }
