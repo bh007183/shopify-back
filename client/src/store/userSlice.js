@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit"
 import {apiCallBegan} from "./apiActions"
-import reducer from "./reducer"
+
 
 const slice = createSlice({
     name: "User",
@@ -16,3 +16,10 @@ const slice = createSlice({
 })
 export const {setUser} = slice.actions
 export default slice.reducer
+
+export const loginApi = (data) => apiCallBegan({
+    url: "http://localhost:3001/login",
+    method: "POST",
+    data: data,
+    onSuccess: setUser.type
+})
