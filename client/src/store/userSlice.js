@@ -1,18 +1,34 @@
 import {createSlice} from "@reduxjs/toolkit"
 import {apiCallBegan} from "./apiActions"
-import reducer from "./reducer"
+
 
 const slice = createSlice({
     name: "User",
     initialState:{
-        CurrentUser: ''
+        CurrentUser: '',
+        onError: []
 
     },
     reducers:{
         setUser: (User, action)=>{
-            localStorage.setItem("UserName", action.payload.user)
-        }
+            User.CurrentUser = action.payload.token
+            localStorage.setItem("token", action.payload.token.user)
+            console.log(action.payload)
+        },
+        // setError: (User, action)=>{
+        //     User.onError = [action.payload.response.data]
+            
+        // }
     }
 })
 export const {setUser} = slice.actions
 export default slice.reducer
+
+export const loginApi = (data) => apiCallBegan({
+    url: "http://localhost:3001/login",
+    method: "POST",
+    data: data,
+    onSuccess: setUser.type,
+    // onError: setError.type
+    
+})

@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as actions from "../apiActionCreators";
+import * as actions from "../apiActions";
 
 export const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== actions.apiCallBegan.type) return next(action);
@@ -19,7 +19,7 @@ export const api = ({ dispatch }) => (next) => async (action) => {
     if (onSuccess) dispatch({ type: onSuccess, payload: response.data });
   } catch (error) {
     //general
-    dispatch(actions.apiCallFailed(alert(error.message)));
+    dispatch(actions.apiCallFailed(error.message));
     //specific
     if (onError) dispatch({ type: onError, payload: error });
   }
