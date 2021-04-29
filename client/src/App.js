@@ -8,6 +8,8 @@ import Header from "./components/header"
 const store = configureStore()
 
 function App() {
+  const store = configureStore();
+
   return (
     <Provider store={store}>
       <Header/>

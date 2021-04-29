@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { loginApi } from "../store/userSlice";
 import Modal from "@material-ui/core/Modal"
 
-
 export default function LoginModal(props) {
   const dispatch = useDispatch();
 
