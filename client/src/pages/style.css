@@ -1,0 +1,7 @@
+.imgContainer{
+    width: 200px;
+    contain: content;
+}
+.image{
+    width: 100%;
+}
