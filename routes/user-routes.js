@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const db = require("../models");
 const bcrypt = require("bcrypt");
@@ -43,7 +44,7 @@ router.post("/login", async (req, res) => {
         }
       );
     } else {
-      res.json("No such user!");
+      res.status(401).send("No such user!");
     }
   }
 });

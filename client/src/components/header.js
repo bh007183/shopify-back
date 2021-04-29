@@ -3,6 +3,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography"
 import Toolbar from "@material-ui/core/Toolbar"
 import LoginModal from "./loginModal"
+import "./style.css"
 
 export default function Header() {
     const [open, setOpen] = React.useState(false);
@@ -22,7 +23,7 @@ export default function Header() {
           Welcome to the Image Database!
         </Typography>
         {/* onClick={handleOpen} */}
-        <button >Sign In</button>
+        <button onClick={handleOpen}>Sign In</button>
       </Toolbar>
       <LoginModal open={open} handleClose={handleClose} />
     </>

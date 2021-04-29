@@ -1,0 +1,22 @@
+.loginModal {
+    width: 200px;
+     height: 200px;
+     position: absolute;
+     left: 0%;
+     right: 0%;
+     top: 30%; 
+     margin:0 auto;
+     background-color: black;
+     
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+  }
+
+  .toolBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(149, 191, 71);
+  }

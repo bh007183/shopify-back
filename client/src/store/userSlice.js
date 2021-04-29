@@ -11,8 +11,8 @@ const slice = createSlice({
     },
     reducers:{
         setUser: (User, action)=>{
-            User.CurrentUser = action.payload.token
-            localStorage.setItem("token", action.payload.token.user)
+            User.CurrentUser = action.payload.user
+            localStorage.setItem("token", action.payload.token)
             console.log(action.payload)
         },
         // setError: (User, action)=>{
